@@ -27,16 +27,21 @@ class MainActivity : AppCompatActivity() {
 
                 var user = BD.users.firstOrNull() {it -> it.username == etUsuario.text.toString()}
 
-                //Cria valores fixos no app para validação
-                val sysUser = "admin"
-                val sysSenha = 123456
+                if(user != null){
 
-                // Converte o valor para inteiro e verifica se é igual ao valor da variável sysSenha
-                if (etSenha.text.toString().toInt() == sysSenha && etUsuario.text.toString() == sysUser) {
-                    //Exibe a mensagem de bem vindo
-                    Toast.makeText(this, "Seja bem vindo " + etUsuario.text.toString(), Toast.LENGTH_LONG).show()
-                    val newIntent = Intent(this, CalculadoraActivity::class.java);
-                    startActivity(newIntent);
+                    val sysUser = user.username
+                    val sysSenha = user.senha
+
+                    if (etSenha.text.toString() == sysSenha && etUsuario.text.toString() == sysUser) {
+
+                        Toast.makeText(this, "Seja bem vindo " + etUsuario.text.toString(), Toast.LENGTH_LONG).show()
+                        val newIntent = Intent(this, CalculadoraActivity::class.java);
+                        startActivity(newIntent);
+
+                    } else {
+                        //Exibe a mensagem de usuário ou senha inválidos
+                        Toast.makeText(this, "Usuario ou senha inválidos!", Toast.LENGTH_SHORT).show()
+                    }
                 } else {
                     //Exibe a mensagem de usuário ou senha inválidos
                     Toast.makeText(this, "Usuario ou senha inválidos!", Toast.LENGTH_SHORT).show()
@@ -53,7 +58,8 @@ class MainActivity : AppCompatActivity() {
 
         // Seta o evento de listener do click do objeto
         btCadastrar.setOnClickListener {
-            Toast.makeText(this, "Funcionalidade em desenvolvimento", Toast.LENGTH_SHORT).show()
+            val newItent = Intent(this, CadastroActivity::class.java)
+            startActivity(newItent)
         }
 
 
