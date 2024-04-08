@@ -5,21 +5,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:layout_margin="5dp"
+    android:layout_margin="25dp"
     tools:context=".MainActivity">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Login"
+        android:text="LOGIN"
         android:layout_gravity="center"
-        android:textSize="30dp"
-        android:layout_marginTop="30dp"/>
+        android:textSize="40dp"
+        android:layout_marginTop="11dp"/>
 
     <EditText
         android:id="@+id/etUsuario"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
         android:hint="E-mail"
         android:inputType="text"/>
 
@@ -27,6 +28,7 @@
         android:id="@+id/etSenha"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
         android:hint="Senha"
         android:inputType="textPassword"/>
 
@@ -41,7 +43,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:backgroundTint="#A95AAFCA"
+            android:backgroundTint="@color/buttonSelected"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
             android:text="Entrar" />

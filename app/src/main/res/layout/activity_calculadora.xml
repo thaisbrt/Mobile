@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:layout_margin="5dp"
+    android:layout_margin="25dp"
     tools:context=".CalculadoraActivity">
 
     <TextView
@@ -13,13 +13,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="11dp"
         android:text="CALCULADORA"
         android:textSize="30dp" />
 
     <EditText
         android:id="@+id/etPrimeiroNumero"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="20dp"
         android:layout_gravity="center"
@@ -92,7 +92,7 @@
 
         <EditText
             android:id="@+id/etSegundoNumero"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:hint="insira o 2° numero"
@@ -103,6 +103,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Calcular"
+            android:layout_marginTop="30dp"
             android:backgroundTint="@color/button"
             />
 
