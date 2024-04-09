@@ -6,6 +6,7 @@ import android.view.View
 import android.view.accessibility.AccessibilityManager.TouchExplorationStateChangeListener
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 
@@ -14,6 +15,7 @@ class CalculadoraActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_calculadora)
 
+        val btVoltar = findViewById<ImageView>(R.id.btVoltarCalculadora)
         val etPrimeiroNumero = findViewById<EditText>(R.id.etPrimeiroNumero)
         val etSegundoNumero = findViewById<EditText>(R.id.etSegundoNumero)
 
@@ -25,6 +27,10 @@ class CalculadoraActivity : AppCompatActivity() {
         val tvResult = findViewById<TextView>(R.id.tvResultado)
 
         var operacao = ""
+
+        btVoltar.setOnClickListener{
+            finish()
+        }
 
         btSomar.setOnClickListener {
             operacao = "+"
@@ -80,8 +86,8 @@ class CalculadoraActivity : AppCompatActivity() {
                     else if (operacao == "*")
                         result = num1String.toDouble() * num2String.toDouble()
 
-                    //Toast.makeText(this, "O Resultado é: $result", Toast.LENGTH_LONG).show()
-                    tvResult.text = "O Resultado é: " + result
+
+                    tvResult.text = "Resultado: " + result
 
                 } else {
                     Toast.makeText(this, "Informe os 2 numeros para continuar", Toast.LENGTH_SHORT).show()

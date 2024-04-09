@@ -38,25 +38,21 @@ class MainActivity : AppCompatActivity() {
                         val newIntent = Intent(this, CalculadoraActivity::class.java);
                         startActivity(newIntent);
 
-                    } else {
+                    }else {
                         //Exibe a mensagem de usuário ou senha inválidos
                         Toast.makeText(this, "Usuario ou senha inválidos!", Toast.LENGTH_SHORT).show()
                     }
-                } else {
+                }else {
                     //Exibe a mensagem de usuário ou senha inválidos
                     Toast.makeText(this, "Usuario ou senha inválidos!", Toast.LENGTH_SHORT).show()
                 }
-
-            } else {
+            }else {
                 Toast.makeText(this, "Digite o usuário e senha", Toast.LENGTH_SHORT).show()
             }
-
         }
 
-        // Busca o objeto da tela e atribui na variável kotlin
         val btCadastrar: Button = findViewById<Button>(R.id.btCadastrar)
 
-        // Seta o evento de listener do click do objeto
         btCadastrar.setOnClickListener {
             val newItent = Intent(this, CadastroActivity::class.java)
             startActivity(newItent)
